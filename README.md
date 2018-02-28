@@ -1,11 +1,13 @@
 # Hashcode 2018
 
-Tommasi Marion
+- Tommasi Marion
 
-Mercier Tony
+- Mercier Tony
 
-D'Azemar Arthur
+- D'Azemar Arthur
 
-Bouchoucha Jordan
+- Bouchoucha Jordan
 
-la puissance est trop graaaaande
+la puissance est trop graaaaande :
+
+https://www.youtube.com/watch?v=0S_Kmps-Zgk
