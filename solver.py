@@ -24,6 +24,7 @@ def solver_greedy_time(filename):
 
 """
 Fonction heuristique amélioré
+cherchant toujours le plus proche
 """
 def solver_heuristic(filename):
   data = get_input(filename)
@@ -31,5 +32,9 @@ def solver_heuristic(filename):
   distributions = [[] for _ in range(vehicules)]
 
   new_rides = sorted(rides, key=lambda x: x.earliest_start)
+
+  # Tant qu'il y a encore des rides
+  for ride in new_rides:
+    
 
   write_distributions(distributions, filename)
