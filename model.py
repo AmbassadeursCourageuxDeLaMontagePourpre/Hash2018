@@ -4,7 +4,8 @@ l'entrée et renvoie la data
 """
 
 class Ride:
-  def __init__(self, start_x, start_y, end_x, end_y, earliest_start, latest_finish):
+  def __init__(self, id, start_y, start_x, end_y, end_x, earliest_start, latest_finish):
+    self.id = id
     self.start_x = start_x
     self.start_y = start_y
     self.end_x = end_x
@@ -15,19 +16,22 @@ class Ride:
 def get_input(filename):
   f = open(filename, 'r')
   data = {}
-  data['rows'] = int(f.readline().strip())
-  data['columns'] = int(f.readline().strip())
-  data['n_vehicles'] = int(f.readline().strip())
-  data['n_rides'] = int(f.readline().strip())
-  data['bonus'] = int(f.readline().strip())
-  data['n_step'] = int(f.readline().strip())
+  l1 = f.readline().strip().split()
+  
+  data['rows'] = int(l1[0])
+  data['columns'] = int(l1[1])
+  data['n_vehicles'] = int(l1[2])
+  data['n_rides'] = int(l1[3])
+  data['bonus'] = int(l1[4])
+  data['n_step'] = int(l1[5])
 
   data['rides'] = []
+  i = 0
   for line in f:
+    i += 1
     l = line.split()
-    for i in l:
-    
-
-  
+    data['rides'].append(Ride(i, int(l[0]), int(l[1]), int(l[2]), int(l[3]), int(l[4]), int(l[5])))
   return data
+
+
   
