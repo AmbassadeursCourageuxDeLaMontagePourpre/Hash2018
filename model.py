@@ -62,6 +62,3 @@ def score(solution, data):
   for car in solution:
     s += car_score(data, car)
   return s
-
-    
-    
