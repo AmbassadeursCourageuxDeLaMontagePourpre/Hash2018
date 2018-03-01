@@ -20,4 +20,16 @@ def solver_greedy_time(filename):
     distributions[cpt].append(ride.id)
     cpt+=1
 
+  return distributions
+
+"""
+Fonction heuristique amélioré
+"""
+def solver_heuristic(filename):
+  data = get_input(filename)
+  vehicules = data['n_vehicles']
+  distributions = [[] for _ in range(vehicules)]
+
+  new_rides = sorted(rides, key=lambda x: x.earliest_start)
+
   write_distributions(distributions, filename)
