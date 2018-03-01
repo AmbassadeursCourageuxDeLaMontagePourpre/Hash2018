@@ -44,6 +44,7 @@ def solver_heuristic(filename):
     for veh in range(vehicules):
       # On ne prend pas s'il n'y a pas de bonus
       d1, bonus = ride_score(vehicules_states[veh][0][0], vehicules_states[veh][0][1], vehicules_states[veh][1], ride, data)
+      value_vehicules[veh] = bonus
     chosen_vehicule = np.argmax(value_vehicules) 
     distributions[chosen_vehicule].append(ride.id)
 
