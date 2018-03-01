@@ -45,4 +45,3 @@ def ride_score(x, y, t, ride, data):
   d1 = distance(x, y, ride.start_x, ride.start_y)
   bonus = data['bonus'] if d1 + t <= ride.earliest_start else 0
   d1 += max(ride.earliest_start, d1)
-  bonus += 
