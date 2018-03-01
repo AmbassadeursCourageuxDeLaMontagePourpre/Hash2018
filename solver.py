@@ -42,7 +42,8 @@ def solver_heuristic(filename):
     # donne le meilleur score en la prenant maintenant
     value_vehicules = [-1 for _ in range(vehicules)]
     for veh in range(vehicules):
-      value_vehicules[veh] = ride_score(vehicules_states[veh][0][0], vehicules_states[veh][0][1], vehicules_states[veh][1], ride, data)[1]
+      # On ne prend pas s'il n'y a pas de bonus
+      d1, bonus = ride_score(vehicules_states[veh][0][0], vehicules_states[veh][0][1], vehicules_states[veh][1], ride, data)
     chosen_vehicule = np.argmax(value_vehicules) 
     distributions[chosen_vehicule].append(ride.id)
 
