@@ -38,11 +38,30 @@ def get_input(filename):
     i += 1
   return data
 
-
-
-
 def ride_score(x, y, t, ride, data):
   d1 = distance(x, y, ride.start_x, ride.start_y)
   bonus = data['bonus'] if d1 + t <= ride.earliest_start else 0
-  d1 += max(ride.earliest_start, d1)
-  bonus += 
+  d1 = max(ride.earliest_start, d1) + ride.distance
+  bonus += ride.distance if d1 <= ride.latest_finish else 0
+  return d1, bonus
+
+def car_score(data, car):
+  """car = liste de id de ride"""
+  x, y = 0, 0
+  bonus = 0
+  t = 0
+  for ride_id in car:
+
+    ride = data['rides'][ride_id]
+    t, bonus = ride_score(x, y, t, ride, data)
+    x, y = ride.end_x, ride.end_y
+  return bonus
+
+def score(solution, data):
+  s = 0
+  for car in solution:
+    s += car_score(data, car)
+  return s
+
+    
+    
