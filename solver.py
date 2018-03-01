@@ -7,8 +7,8 @@ de façon greedy selon le temps
 def solver_greedy_time(filename):
   data = get_input(filename)
   rides = data['rides']
-  vehicules = data['n_vehicules']
-  distributions = [[] for i in range(vehicules)]
+  vehicules = data['n_vehicles']
+  distributions = [[] for _ in range(vehicules)]
 
   new_rides = sorted(rides, key=lambda x: x.earliest_start)
 
@@ -19,10 +19,12 @@ def solver_greedy_time(filename):
     distributions[cpt].append(ride.id)
     cpt+=1
 
+  print(distributions)
   f = open("output.out", 'w')
   for dis in distributions:
-    line = str(len(dis)) 
+    line = str(len(dis)) + ' ' 
     for d in dis:
-      line += d + ' '
-    f.write(line)
+      line += str(d) + ' '
+    print(line)
+    f.write(line+'\n')
   f.close()
