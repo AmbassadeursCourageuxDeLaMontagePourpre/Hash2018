@@ -12,6 +12,8 @@ class Ride:
     self.end_y = end_y
     self.earliest_start = earliest_start
     self.latest_finish = latest_finish
+    self.total_time = latest_finish - earliest_start
+    self.distance = abs(end_x - start_x) + abs(end_y - start_y)
 
 def get_input(filename):
   f = open(filename, 'r')
