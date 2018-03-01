@@ -19,8 +19,7 @@ def solver_greedy_time(filename):
     distributions[cpt].append(ride.id)
     cpt+=1
 
-  print(distributions)
-  f = open("output.out", 'w')
+  f = open(filename+'.out', 'w')
   for dis in distributions:
     line = str(len(dis)) + ' ' 
     for d in dis:
