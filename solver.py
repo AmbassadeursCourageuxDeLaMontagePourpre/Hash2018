@@ -1,4 +1,5 @@
 from model import * 
+from helping import *
 
 """
 Fonction qui résout le problème
@@ -19,11 +20,4 @@ def solver_greedy_time(filename):
     distributions[cpt].append(ride.id)
     cpt+=1
 
-  f = open(filename+'.out', 'w')
-  for dis in distributions:
-    line = str(len(dis)) + ' ' 
-    for d in dis:
-      line += str(d) + ' '
-    print(line)
-    f.write(line+'\n')
-  f.close()
+  write_distributions(distributions, filename)
