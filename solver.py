@@ -20,7 +20,7 @@ def solver_greedy_time(filename):
     distributions[cpt].append(ride.id)
     cpt+=1
 
-  return return_distributions(distributions, filename)
+  return distributions
 
 """
 Fonction heuristique amélioré
